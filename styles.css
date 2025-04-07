@@ -111,30 +111,38 @@ nav ul li a:hover {
     flex: 1;
     max-width: 600px;
 }
-
-.video-section h3{
-    font-size: 50px;
-    padding-bottom: 20px;
-}
-
 .about img {
     width: 300px;
     height: auto;
     border-radius: 10px;
 }
 
+/* Wrap the video in a max-width container */
 .video-section {
-    padding: 50px;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 20px;
     text-align: center;
-    margin-top: 100px;
-}
-
-video {
+  }
+  
+  .video-container {
+    position: relative;
     width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    background: #e1e1e1;
+    border-radius: 12px;
+  }
+  
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
 
 /* Portfolio Section */
 .portfolio {
@@ -233,5 +241,15 @@ form {
 
     .project {
         width: 100%;
+    }
+
+    /* Responsive YouTube Video */
+    .video-container {
+        padding-bottom: 56.25%;
+    }
+
+    .video-container iframe {
+        width: 100%;
+        height: 100%;
     }
 }
